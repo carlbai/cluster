@@ -8,10 +8,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import org.joda.time.DateTime;
+
+import java.math.BigDecimal;
+import java.util.List;
+
 public class TransactionsActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+
+    // TODO: 9/10/2015 Replace when grabbing data from Firebase has been implemented
+    private List<Transaction> tempTransactions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +35,14 @@ public class TransactionsActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
+        // TODO: 9/10/2015 Replace when grabbing data from Firebase has been implemented
+        tempTransactions.add(new Transaction("To Carl for Boo's litter", new DateTime(), new BigDecimal(15)));
+        tempTransactions.add(new Transaction("To Steph for that shitty webcam", new DateTime(2015, 9, 3, 20, 35), new BigDecimal(20)));
+        tempTransactions.add(new Transaction("For making Steph wake early", new DateTime(2015, 9, 5, 8, 30), new BigDecimal(123456789)));
+
         // specify an adapter
-        // mAdapter = new MYADAPTER(MYDATA);
-        // mRecyclerView.setAdapter(mAdapter);
+         mAdapter = new TransactionsAdapter(tempTransactions);
+         mRecyclerView.setAdapter(mAdapter);
     }
 
     @Override
