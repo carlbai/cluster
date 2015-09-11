@@ -18,11 +18,15 @@ public class TransactionsAdapter extends RecyclerView.Adapter<TransactionsAdapte
         // Your holder should contain a member variable
         // for any view that will be set as you render a row
         public TextView description;
+        public TextView date;
+        public TextView amount;
 
         // Constructor
         public TransactionsViewHolder(View v) {
             super(v);
-            description = (TextView) v.findViewById(R.id.description);
+            description = (TextView) v.findViewById(R.id.transactions_description);
+            date = (TextView) v.findViewById(R.id.transactions_date);
+            amount = (TextView) v.findViewById(R.id.transactions_amount);
         }
     }
 
@@ -53,6 +57,8 @@ public class TransactionsAdapter extends RecyclerView.Adapter<TransactionsAdapte
         Transaction currentTransaction = transactionsList.get(position);
 
         viewHolder.description.setText(currentTransaction.getDescription());
+        viewHolder.date.setText(currentTransaction.getDate());
+        viewHolder.amount.setText("$" + currentTransaction.getAmount());
     }
 
     @Override

@@ -21,4 +21,12 @@ public class Transaction {
     public String getDescription() {
         return description;
     }
+
+    public String getDate() {
+        return date.toString();
+    }
+
+    public String getAmount() {
+        return amount.toString();
+    }
 }
