@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Transactions"
+            android:name=".TransactionsActivity"
             android:label="@string/title_activity_transactions"
             android:parentActivityName=".MainActivity" >
             <meta-data

@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
+import java.util.LinkedList;
 import java.util.List;
 
 public class TransactionsActivity extends AppCompatActivity {
@@ -19,7 +20,7 @@ public class TransactionsActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
 
     // TODO: 9/10/2015 Replace when grabbing data from Firebase has been implemented
-    private List<Transaction> tempTransactions;
+    private List<Transaction> tempTransactions = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

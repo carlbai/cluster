@@ -1,9 +1,11 @@
 package com.baibye.cluster;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -56,5 +58,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void toTransactions(View view) {
+        Intent intent = new Intent(this, TransactionsActivity.class);
+        startActivity(intent);
     }
 }
