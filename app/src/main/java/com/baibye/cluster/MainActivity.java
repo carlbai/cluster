@@ -1,9 +1,7 @@
 package com.baibye.cluster;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,7 +13,6 @@ import net.danlew.android.joda.JodaTimeAndroid;
 
 public class MainActivity extends AppCompatActivity {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,13 +21,6 @@ public class MainActivity extends AppCompatActivity {
         JodaTimeAndroid.init(this);
 
         Firebase.setAndroidContext(this);
-
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        if (prefs.getBoolean("firstRun", true)) {
-            Firebase.getDefaultConfig().setPersistenceEnabled(true);
-            prefs.edit().putBoolean("firstRun", false).commit();
-        }
-
     }
 
     @Override
