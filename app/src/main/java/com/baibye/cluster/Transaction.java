@@ -9,10 +9,14 @@ import java.math.BigDecimal;
  */
 public class Transaction {
     private String description;
-    private DateTime date;
+    private String date;
     private BigDecimal amount;
 
-    public Transaction(String description, DateTime date, BigDecimal amount) {
+    public Transaction() {
+
+    }
+
+    public Transaction(String description, String date, BigDecimal amount) {
         this.description = description;
         this.date = date;
         this.amount = amount;
@@ -23,10 +27,19 @@ public class Transaction {
     }
 
     public String getDate() {
-        return date.toString();
+        return date;
     }
 
     public String getAmount() {
         return amount.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "description='" + description + '\'' +
+                ", date=" + date +
+                ", amount=" + amount +
+                '}';
     }
 }

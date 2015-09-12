@@ -12,6 +12,15 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
+import net.danlew.android.joda.JodaTimeAndroid;
+
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
+import org.joda.time.LocalDateTime;
+import org.joda.time.LocalTime;
+
+import java.math.BigDecimal;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -19,23 +28,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        JodaTimeAndroid.init(this);
+        
+        populateFirebase();
+    }
+
+    private void populateFirebase() {
         Firebase.setAndroidContext(this);
 
-        Firebase myFirebaseRef = new Firebase("https://resplendent-heat-4997.firebaseIO.com/");
-        myFirebaseRef.child("message").setValue("Do you have data? You'll love Firebase.");
+        Firebase ref = new Firebase("https://resplendent-heat-4997.firebaseIO.com/");
 
-        myFirebaseRef.child("message").addValueEventListener(new ValueEventListener() {
+        Firebase postRef = ref.child("Transactions");
 
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                System.out.println(snapshot.getValue());  //prints "Do you have data? You'll love Firebase."
-            }
-
-            @Override
-            public void onCancelled(FirebaseError error) {
-            }
-
-        });
+        // Commented out because it kept on adding new Transactions due to unique key created by push()
+        /*
+        postRef.push().setValue(
+                new Transaction("To Carl for Boo's litter", new DateTime().toString(), new BigDecimal(15)));
+        postRef.push().setValue(
+                new Transaction("To Steph for that shitty webcam", new DateTime(2015, 9, 3, 20, 35).toString(), new BigDecimal(20)));
+        postRef.push().setValue(
+                new Transaction("For making Steph wake early", new DateTime(2015, 9, 5, 8, 30).toString(), new BigDecimal(123456789)));
+        */
     }
 
     @Override

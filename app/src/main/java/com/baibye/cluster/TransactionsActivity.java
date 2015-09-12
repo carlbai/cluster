@@ -8,6 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+
 import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
@@ -19,7 +24,6 @@ public class TransactionsActivity extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    // TODO: 9/10/2015 Replace when grabbing data from Firebase has been implemented
     private List<Transaction> tempTransactions = new LinkedList<>();
 
     @Override
@@ -36,14 +40,34 @@ public class TransactionsActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        // TODO: 9/10/2015 Replace when grabbing data from Firebase has been implemented
-        tempTransactions.add(new Transaction("To Carl for Boo's litter", new DateTime(), new BigDecimal(15)));
-        tempTransactions.add(new Transaction("To Steph for that shitty webcam", new DateTime(2015, 9, 3, 20, 35), new BigDecimal(20)));
-        tempTransactions.add(new Transaction("For making Steph wake early", new DateTime(2015, 9, 5, 8, 30), new BigDecimal(123456789)));
-
         // specify an adapter
          mAdapter = new TransactionsAdapter(tempTransactions);
          mRecyclerView.setAdapter(mAdapter);
+
+        retrieveData();
+    }
+
+    private void retrieveData() {
+        Firebase ref = new Firebase("https://resplendent-heat-4997.firebaseIO.com/Transactions");
+
+        ref.addValueEventListener(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                System.out.println("There are " + snapshot.getChildrenCount() + " transactions");
+                for(DataSnapshot postSnapshot : snapshot.getChildren()) {
+                    Transaction transaction = postSnapshot.getValue(Transaction.class);
+                    System.out.println(transaction.toString());
+                    tempTransactions.add(transaction);
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError error) {
+                System.out.println("The read failed: " + error.getMessage());
+            }
+
+        });
     }
 
     @Override
