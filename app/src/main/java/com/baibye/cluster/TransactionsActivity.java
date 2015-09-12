@@ -1,8 +1,7 @@
 package com.baibye.cluster;
 
-import android.app.ListActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -13,9 +12,6 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
-import org.joda.time.DateTime;
-
-import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -29,6 +25,9 @@ public class TransactionsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        retrieveData();
+
         setContentView(R.layout.activity_transactions);
         mRecyclerView = (RecyclerView) findViewById(R.id.transactions_list);
 
@@ -41,10 +40,8 @@ public class TransactionsActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter
-         mAdapter = new TransactionsAdapter(tempTransactions);
-         mRecyclerView.setAdapter(mAdapter);
-
-        retrieveData();
+        mAdapter = new TransactionsAdapter(tempTransactions);
+        mRecyclerView.setAdapter(mAdapter);
     }
 
     private void retrieveData() {
@@ -55,7 +52,7 @@ public class TransactionsActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 System.out.println("There are " + snapshot.getChildrenCount() + " transactions");
-                for(DataSnapshot postSnapshot : snapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     Transaction transaction = postSnapshot.getValue(Transaction.class);
                     System.out.println(transaction.toString());
                     tempTransactions.add(transaction);
