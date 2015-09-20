@@ -17,6 +17,7 @@ public class TransactionsAdapter extends RecyclerView.Adapter<TransactionsAdapte
     public static class TransactionsViewHolder extends RecyclerView.ViewHolder {
         // Your holder should contain a member variable
         // for any view that will be set as you render a row
+        public TextView owner;
         public TextView description;
         public TextView date;
         public TextView amount;
@@ -24,6 +25,7 @@ public class TransactionsAdapter extends RecyclerView.Adapter<TransactionsAdapte
         // Constructor
         public TransactionsViewHolder(View v) {
             super(v);
+            owner = (TextView) v.findViewById(R.id.transactions_owner);
             description = (TextView) v.findViewById(R.id.transactions_description);
             date = (TextView) v.findViewById(R.id.transactions_date);
             amount = (TextView) v.findViewById(R.id.transactions_amount);
@@ -56,6 +58,7 @@ public class TransactionsAdapter extends RecyclerView.Adapter<TransactionsAdapte
         // Get the data model based on position
         Transaction currentTransaction = transactionsList.get(position);
 
+        viewHolder.owner.setText(currentTransaction.getOwner());
         viewHolder.description.setText(currentTransaction.getDescription());
         viewHolder.date.setText(currentTransaction.getDate());
         viewHolder.amount.setText("$" + currentTransaction.getAmount());
