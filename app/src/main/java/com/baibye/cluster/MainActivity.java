@@ -11,6 +11,10 @@ import com.firebase.client.Firebase;
 
 import net.danlew.android.joda.JodaTimeAndroid;
 
+import org.joda.time.DateTime;
+
+import java.math.BigDecimal;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -21,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         JodaTimeAndroid.init(this);
 
         Firebase.setAndroidContext(this);
+        //populateFirebase();
     }
 
     @Override
@@ -48,5 +53,16 @@ public class MainActivity extends AppCompatActivity {
     public void toTransactions(View view) {
         Intent intent = new Intent(this, TransactionsActivity.class);
         startActivity(intent);
+    }
+
+    private void populateFirebase() {
+        Firebase ref = new Firebase("https://resplendent-heat-4997.firebaseIO.com/Transactions");
+
+        ref.push().setValue(
+                new Transaction("Carl", "Boo's litter", new DateTime().toString(), new BigDecimal(15)));
+        ref.push().setValue(
+                new Transaction("Steph", "shitty webcam", new DateTime(2015, 9, 3, 20, 35).toString(), new BigDecimal(20)));
+        ref.push().setValue(
+                new Transaction("Steph", "Making Steph wake early", new DateTime(2015, 9, 5, 8, 30).toString(), new BigDecimal(123456789)));
     }
 }

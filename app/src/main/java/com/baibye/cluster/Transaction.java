@@ -8,6 +8,7 @@ import java.math.BigDecimal;
  * Created by carlbai on 8/27/15.
  */
 public class Transaction {
+    private String owner;
     private String description;
     private String date;
     private BigDecimal amount;
@@ -16,7 +17,8 @@ public class Transaction {
 
     }
 
-    public Transaction(String description, String date, BigDecimal amount) {
+    public Transaction(String owner, String description, String date, BigDecimal amount) {
+        this.owner = owner;
         this.description = description;
         this.date = date;
         this.amount = amount;
@@ -32,6 +34,10 @@ public class Transaction {
 
     public String getAmount() {
         return amount.toString();
+    }
+
+    public String getOwner() {
+        return owner;
     }
 
     @Override
