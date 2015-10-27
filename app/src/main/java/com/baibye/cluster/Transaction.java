@@ -13,6 +13,7 @@ public class Transaction {
     private String date;
     private BigDecimal amount;
 
+    //Default Constructor for Firebase
     public Transaction() {
 
     }
