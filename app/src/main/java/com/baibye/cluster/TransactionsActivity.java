@@ -26,8 +26,6 @@ public class TransactionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        retrieveData();
-
         setContentView(R.layout.activity_transactions);
         mRecyclerView = (RecyclerView) findViewById(R.id.transactions_list);
 
@@ -42,6 +40,8 @@ public class TransactionsActivity extends AppCompatActivity {
         // specify an adapter
         mAdapter = new TransactionsAdapter(tempTransactions);
         mRecyclerView.setAdapter(mAdapter);
+
+        retrieveData();
     }
 
     private void retrieveData() {
@@ -57,6 +57,11 @@ public class TransactionsActivity extends AppCompatActivity {
                     System.out.println(transaction.toString());
                     tempTransactions.add(transaction);
                 }
+                // TODO
+                // Google documentation says it's best to use one of the more specific "notify" functions.
+                // In the future, update to use one of these other functions.
+                // http://developer.android.com/reference/android/support/v7/widget/RecyclerView.Adapter.html
+                mAdapter.notifyDataSetChanged();
             }
 
             @Override
