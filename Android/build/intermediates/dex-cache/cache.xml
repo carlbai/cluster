@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/carlbai/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.0-65e312f6b09a97e1b4c3612bfa401d4956e8d4b7.jar" />
+    </item>
+    <item
+        jar="/Users/carlbai/.gradle/caches/modules-2/files-2.1/com.firebase/tubesock/0.0.11/d37cb67277928cf59344b4196af8d9cee1f1a27c/tubesock-0.0.11.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d37cb67277928cf59344b4196af8d9cee1f1a27c">
+        <dex dex="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/pre-dexed/debug/tubesock-0.0.11-10c9708de265b85d8489c91dac049c081e61d12a.jar" />
+    </item>
+    <item
+        jar="/Users/carlbai/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.8.2/af707570c2611aa8584a7773796badd7ab09c0cf/joda-time-2.8.2-no-tzdb.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="af707570c2611aa8584a7773796badd7ab09c0cf">
+        <dex dex="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/pre-dexed/debug/joda-time-2.8.2-no-tzdb-27da1f11e170c3e8d72ca1485dd0e44eb2693d98.jar" />
+    </item>
+    <item
+        jar="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/exploded-aar/net.danlew/android.joda/2.8.2/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8788a0e67d6e2b954774f78c8588c18fb72823ed">
+        <dex dex="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/pre-dexed/debug/classes-1af6e56208fc33b9dd1a50d275c8bde8bc657662.jar" />
+    </item>
+    <item
+        jar="/Users/carlbai/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.2.2/285cb9c666f0f0f3dd8a1be04e1f457eb7b15113/jackson-annotations-2.2.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="285cb9c666f0f0f3dd8a1be04e1f457eb7b15113">
+        <dex dex="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/pre-dexed/debug/jackson-annotations-2.2.2-777829fa22869ab4a30dee3394932800186dd60e.jar" />
+    </item>
+    <item
+        jar="/Users/carlbai/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.2.2/3c8f6018eaa72d43b261181e801e6f8676c16ef6/jackson-databind-2.2.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="3c8f6018eaa72d43b261181e801e6f8676c16ef6">
+        <dex dex="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/pre-dexed/debug/jackson-databind-2.2.2-abc4ae651ed98e6584e4e5f60d563c989d011099.jar" />
+    </item>
+    <item
+        jar="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/pre-dexed/debug/classes-849e97b1a9e7da1239788b5b56f8433923fe2403.jar" />
+    </item>
+    <item
+        jar="/Users/carlbai/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-android/2.3.1/be29b24233711c419ce935aa0a1b12ebc49d1c9a/firebase-client-android-2.3.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="be29b24233711c419ce935aa0a1b12ebc49d1c9a">
+        <dex dex="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/pre-dexed/debug/firebase-client-android-2.3.1-987aaf9aa5d15c275771d06ab4c78735c79696c6.jar" />
+    </item>
+    <item
+        jar="/Users/carlbai/.gradle/caches/modules-2/files-2.1/com.firebase/firebase-client-jvm/2.3.1/4d53b7d6983247af02b8fe7e4228fff555a5e828/firebase-client-jvm-2.3.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4d53b7d6983247af02b8fe7e4228fff555a5e828">
+        <dex dex="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/pre-dexed/debug/firebase-client-jvm-2.3.1-1c1060613f8c43ceabd639689c35e0c7f42a6487.jar" />
+    </item>
+    <item
+        jar="/Users/carlbai/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.2.2/d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b/jackson-core-2.2.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b">
+        <dex dex="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/pre-dexed/debug/jackson-core-2.2.2-e7b4455577dc345b5c09a254ee81670be50e4f11.jar" />
+    </item>
+    <item
+        jar="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0-1a4c1575c8980d302da5708a1c9c8a9d27ed0cb7.jar" />
+    </item>
+    <item
+        jar="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="40e7757d9b06db670062ddb3cf5b30c129b2fd8c">
+        <dex dex="/Users/carlbai/Documents/Android Development/cluster/app/build/intermediates/pre-dexed/debug/classes-5a7bf062b5fa5226fc73b3df41868608443e9008.jar" />
+    </item>
+
+</items>
